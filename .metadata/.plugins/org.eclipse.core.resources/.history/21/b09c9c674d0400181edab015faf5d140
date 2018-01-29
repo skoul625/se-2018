@@ -1,0 +1,112 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.DriverManager;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+import java.sql.SQLException;
+
+/**
+ * Servlet implementation class MyServlet1
+ */
+@WebServlet("/MyServlet1")
+public class MyServlet1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public MyServlet1() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		PrintWriter wri = response.getWriter();
+		 
+		//what the document looks like  (print out)
+		wri.println("<!DOCTYPE html>");
+		wri.println("<html>");
+		wri.println("<body>");
+		wri.println("<h1>Welcome to your Address Book!</h1>");
+		wri.println("<form>");
+		wri.println("Address: <input type= text name= address /> </br>");
+		wri.println("Contact Name: <input type= text name= fmlname /> </br>");
+		wri.println("Email: <input type= text name= email /> </br>");
+		wri.println("Phone: <input type= text name= phone /> </br>");
+		wri.println("<input type= submit value= Add />");
+		wri.println("</form>");
+		wri.println("</body>");
+		wri.println("</html>");
+		
+		//getting info from user
+		
+		PreparedStatement state = null;
+		Connection con = null;
+	 
+		
+		try
+		{
+		String cname = request.getParameter("fmlname");
+		String address = request.getParameter("address");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+			
+		String link = "jdbc:mysql://skhn.ddns.net:3306/myDBPro1"; //need to check that url
+	    String username = "hello";
+		String password = "pass";
+		con = (Connection) DriverManager.getConnection( link , username, password); 	
+		state = (PreparedStatement) con.prepareStatement("insert into myAddressBook1 (NAME,ADDRESS,EMAIL,PHONE)values('"+cname+"','"+address+"','"+email+"','"+phone+"')");
+		//state.setString(1,name);
+		//state.setString(2,address);
+		//state.setString(3,email);
+		//state.setString(4,phone);
+		state.execute();
+		System.out.println(cname);
+		if(cname == null && address == null && email == null && phone == null)
+		{
+			wri.print("");
+	
+		}
+		else
+		{
+			wri.println("<!DOCTYPE html>");
+			wri.println("<html>");
+			wri.println("<body>");
+			wri.println("<br>New Contact Added! </br>");
+			wri.println("<a>The contact name is </a>" + cname + ".");
+			wri.println("<a>The address is </a>" + address + ".");
+			wri.println("<a>The email is </a>" + email + ".");
+			wri.println("<a>The phone number is </a>" + phone + ".");
+			wri.println("</body>");
+			wri.println("</html>");
+		}
+		//putting data given from user into the database.....insert statement	
+		}
+		catch(SQLException err ) 
+		{
+		System.out.println( err.getMessage( ) );
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
