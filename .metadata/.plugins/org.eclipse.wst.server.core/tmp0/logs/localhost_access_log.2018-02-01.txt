@@ -1,0 +1,10 @@
+127.0.0.1 - - [01/Feb/2018:14:26:19 -0600] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:26:24 -0600] "GET /SoftEngS2018/MyServlet1 HTTP/1.1" 200 781
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:26:37 -0600] "GET /SoftEngS2018/MyServlet1?identify=Bob HTTP/1.1" 200 870
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:35:33 -0600] "GET /SoftEngS2018/MyServlet1 HTTP/1.1" 200 781
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:36:50 -0600] "GET /SoftEngS2018/MyServlet1 HTTP/1.1" 200 781
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:37:24 -0600] "GET /SoftEngS2018/MyServlet1?address=98234+G+Street&fmlname=Z+T&email=zt@gmail.com&phone=402-123-7265 HTTP/1.1" 200 1023
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:37:31 -0600] "GET /SoftEngS2018/MyServlet1?identify=Z+T HTTP/1.1" 200 1027
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:37:41 -0600] "GET /SoftEngS2018/MyServlet1?delete=Z+T HTTP/1.1" 200 872
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:37:57 -0600] "GET /SoftEngS2018/MyServlet1?identify=Z+T HTTP/1.1" 200 870
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:14:39:45 -0600] "GET /SoftEngS2018/MyServlet1?address=1234+Y+Street+Omaha%2C+NE&fmlname=Mark+Got7&email=mgot7@gmail.com&phone=402-123-2345 HTTP/1.1" 200 871

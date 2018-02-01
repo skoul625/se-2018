@@ -1,0 +1,7 @@
+127.0.0.1 - - [29/Jan/2018:18:18:42 -0600] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [29/Jan/2018:18:18:47 -0600] "GET /SoftEngS2018/MyServlet1 HTTP/1.1" 200 731
+0:0:0:0:0:0:0:1 - - [29/Jan/2018:18:19:08 -0600] "GET /SoftEngS2018/MyServlet1?address=&fmlname=&email=&phone= HTTP/1.1" 200 731
+0:0:0:0:0:0:0:1 - - [29/Jan/2018:18:20:58 -0600] "GET /SoftEngS2018/MyServlet1 HTTP/1.1" 200 731
+0:0:0:0:0:0:0:1 - - [29/Jan/2018:18:21:06 -0600] "GET /SoftEngS2018/MyServlet1?address=&fmlname=&email=&phone= HTTP/1.1" 200 731
+0:0:0:0:0:0:0:1 - - [29/Jan/2018:18:21:18 -0600] "GET /SoftEngS2018/MyServlet1?address=&fmlname=&email=&phone= HTTP/1.1" 200 731
+0:0:0:0:0:0:0:1 - - [29/Jan/2018:18:28:47 -0600] "GET /SoftEngS2018/MyServlet1 HTTP/1.1" 200 763
