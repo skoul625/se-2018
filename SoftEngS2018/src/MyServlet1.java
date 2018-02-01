@@ -123,7 +123,7 @@ public class MyServlet1 extends HttpServlet {
 		wri.println("<html>");
 		wri.println("<body>");
 		wri.println("<form>");
-		wri.println("<br>View your contact or all! </br>");
+		wri.println("<br>View a contact! </br>");
 		wri.println("Enter the name: <input type= text name= identify required /> </br>");
 		wri.println("<input type= submit value= View />");
 		wri.println("</form>");
